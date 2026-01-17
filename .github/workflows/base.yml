@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   ubuntu_base_tests:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         release: [jammy, noble]
@@ -82,7 +82,7 @@ jobs:
             fi
 
   debian_base_tests:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         release: [bookworm, trixie]
@@ -146,7 +146,7 @@ jobs:
             fi
 
   ubuntu_base_latest_deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -189,7 +189,7 @@ jobs:
               --cache-to type=gha,mode=max \
               .
   ubuntu_base_deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -238,7 +238,7 @@ jobs:
               --cache-to type=gha,mode=max \
               .
   debian_base_deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
