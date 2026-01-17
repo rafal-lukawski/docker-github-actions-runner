@@ -194,7 +194,7 @@ jobs:
     needs: ubuntu_base_tests
     strategy:
       matrix:
-        release: [jammy, fnoble]
+        release: [jammy, noble]
       fail-fast: false
     steps:
       - name: Copy Repo Files
