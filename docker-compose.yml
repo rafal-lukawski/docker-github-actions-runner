@@ -1,0 +1,14 @@
+services:
+
+  github-runner-base:
+    image: ghcr.io/rafal-lukawski/github-runner-base:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+
+  github-runner:
+    image: ghcr.io/rafal-lukawski/github-runner:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+

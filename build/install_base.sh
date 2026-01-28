@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Required by the build or runner operation
 function install_essentials() {
-  apt-get install -y --no-install-recommends \
+  apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
       curl \
       jq \
