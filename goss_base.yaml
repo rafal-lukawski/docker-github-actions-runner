@@ -11,6 +11,8 @@ package:
         installed: false
     jq:
         installed: true
+    libyaml-dev:
+        installed: true
     lsb-release:
         installed: true
     make:

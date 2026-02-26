@@ -23,7 +23,8 @@
         "gettext",
         "libcurl4-openssl-dev",
         "libpq-dev",
-        "pkg-config"
+        "pkg-config",
+        "libyaml-dev"
       ]
     },
     {
