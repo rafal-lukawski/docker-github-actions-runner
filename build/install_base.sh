@@ -19,7 +19,8 @@ function install_essentials() {
       gpg-agent \
       dumb-init \
       libc-bin \
-      python3
+      python3 \
+      libyaml-dev
 }
 
 function install_tools_apt() {
