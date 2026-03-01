@@ -1,4 +1,5 @@
-FROM ubuntu:noble
+ARG OS_VERSION=ubuntu:noble
+FROM ${OS_VERSION}
 LABEL maintainer="rs.lukawski@gmail.com"
 
 ENV LANG=en_US.UTF-8

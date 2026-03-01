@@ -1,5 +1,6 @@
 # hadolint ignore=DL3007
-FROM ghcr.io/rafal-lukawski/github-runner-base:latest
+ARG OS_VERSION=ubuntu-noble
+FROM ghcr.io/rafal-lukawski/github-runner-base:${OS_VERSION}
 LABEL maintainer="rs.lukawski@gmail.com"
 
 ENV AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache

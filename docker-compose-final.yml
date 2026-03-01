@@ -1,0 +1,51 @@
+services:
+  github-runner-ubuntu-jammy:
+    image: ghcr.io/rafal-lukawski/github-runner:ubuntu-jammy
+    depends_on:
+      - github-runner-base-ubuntu-jammy
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        OS_VERSION: ubuntu-jammy
+      platforms:
+        - linux/amd64
+        # - linux/arm64
+  github-runner-ubuntu-noble:
+    image: ghcr.io/rafal-lukawski/github-runner:ubuntu-noble
+    depends_on:
+      - github-runner-base-ubuntu-noble
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        OS_VERSION: ubuntu-noble
+      platforms:
+        - linux/amd64
+        # - linux/arm64
+
+  github-runner-debian-bookworm:
+    image: ghcr.io/rafal-lukawski/github-runner:debian-bookworm
+    depends_on:
+      - github-runner-base-debian-bookworm
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        OS_VERSION: debian-bookworm
+      platforms:
+        - linux/amd64
+        # - linux/arm64
+
+  github-runner-debian-trixie:
+    image: ghcr.io/rafal-lukawski/github-runner:debian-trixie
+    depends_on:
+      - github-runner-base-debian-trixie
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        OS_VERSION: debian-trixie
+      platforms:
+        - linux/amd64
+        # - linux/arm64
