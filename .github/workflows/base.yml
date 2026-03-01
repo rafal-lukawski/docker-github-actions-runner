@@ -5,6 +5,7 @@ on:
       - Dockerfile.base
       - .github/workflows/base.yml
       - goss*
+      - build/**
     branches:
       - master
       - develop
