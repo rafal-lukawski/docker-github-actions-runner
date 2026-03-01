@@ -1,8 +1,6 @@
 services:
   github-runner-ubuntu-jammy:
     image: ghcr.io/rafal-lukawski/github-runner:ubuntu-jammy
-    depends_on:
-      - github-runner-base-ubuntu-jammy
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,8 +11,6 @@ services:
         # - linux/arm64
   github-runner-ubuntu-noble:
     image: ghcr.io/rafal-lukawski/github-runner:ubuntu-noble
-    depends_on:
-      - github-runner-base-ubuntu-noble
     build:
       context: .
       dockerfile: Dockerfile
@@ -26,8 +22,6 @@ services:
 
   github-runner-debian-bookworm:
     image: ghcr.io/rafal-lukawski/github-runner:debian-bookworm
-    depends_on:
-      - github-runner-base-debian-bookworm
     build:
       context: .
       dockerfile: Dockerfile
@@ -39,8 +33,6 @@ services:
 
   github-runner-debian-trixie:
     image: ghcr.io/rafal-lukawski/github-runner:debian-trixie
-    depends_on:
-      - github-runner-base-debian-trixie
     build:
       context: .
       dockerfile: Dockerfile
