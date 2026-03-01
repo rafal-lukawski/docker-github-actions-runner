@@ -10,5 +10,4 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV DEBIAN_FRONTEND=noninteractive
 
 COPY --chmod=700 build/ /tmp/build/
-ARG CACHE_BUST
 RUN /tmp/build/install_base.sh
