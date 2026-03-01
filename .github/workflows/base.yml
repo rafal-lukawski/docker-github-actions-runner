@@ -64,6 +64,7 @@ jobs:
             docker buildx build \
               --file Dockerfile.base \
               --build-arg OS_VERSION=ubuntu:${{ matrix.release }} \
+              --build-arg CACHE_BUST=${{ github.sha }} \
               --platform linux/${{ matrix.platform }} \
               --tag ${{ env.GH_RUNNER_IMAGE }} \
               --load \
@@ -130,6 +131,7 @@ jobs:
             docker buildx build \
               --file Dockerfile.base \
               --build-arg OS_VERSION=debian:${{ matrix.release }} \
+              --build-arg CACHE_BUST=${{ github.sha }} \
               --platform linux/${{ matrix.platform }} \
               --tag ${{ env.GH_RUNNER_IMAGE }} \
               --load \
@@ -179,6 +181,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Retry build and push
         uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
         with:
           timeout_minutes: 60
@@ -186,6 +189,7 @@ jobs:
           command: |
             docker buildx build \
               --file Dockerfile.base \
+              --build-arg CACHE_BUST=${{ github.sha }} \
               --platform linux/amd64,linux/arm64 \
               --tag ${{ env.ORG }}/github-runner-base:latest \
               --push \
@@ -235,6 +239,7 @@ jobs:
             docker buildx build \
               --file Dockerfile.base \
               --build-arg OS_VERSION=ubuntu:${{ matrix.release }} \
+              --build-arg CACHE_BUST=${{ github.sha }} \
               --platform linux/amd64,linux/arm64 \
               --tag ${{ env.ORG }}/github-runner-base:ubuntu-${{ matrix.release }} \
               --push \
@@ -284,6 +289,7 @@ jobs:
             docker buildx build \
               --file Dockerfile.base \
               --build-arg OS_VERSION=debian:${{ matrix.release }} \
+              --build-arg CACHE_BUST=${{ github.sha }} \
               --platform linux/amd64,linux/arm64 \
               --tag ${{ env.ORG }}/github-runner-base:debian-${{ matrix.release }} \
               --push \

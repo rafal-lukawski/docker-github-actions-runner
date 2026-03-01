@@ -8,7 +8,7 @@ services:
         OS_VERSION: ubuntu:jammy
       platforms:
         - linux/amd64
-        # - linux/arm64
+        - linux/arm64
 
   github-runner-base-ubuntu-noble:
     image: ghcr.io/rafal-lukawski/github-runner-base:ubuntu-noble
@@ -19,7 +19,7 @@ services:
         OS_VERSION: ubuntu:noble
       platforms:
         - linux/amd64
-        # - linux/arm64
+        - linux/arm64
 
   github-runner-base-debian-bookworm:
     image: ghcr.io/rafal-lukawski/github-runner-base:debian-bookworm
@@ -30,7 +30,7 @@ services:
         OS_VERSION: debian:bookworm
       platforms:
         - linux/amd64
-        # - linux/arm64
+        - linux/arm64
   github-runner-base-debian-trixie:
     image: ghcr.io/rafal-lukawski/github-runner-base:debian-trixie
     build:
@@ -40,4 +40,4 @@ services:
         OS_VERSION: debian:trixie
       platforms:
         - linux/amd64
-        # - linux/arm64
+        - linux/arm64
