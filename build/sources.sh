@@ -48,8 +48,8 @@ function configure_container_tools() {
 }
 
 function configure_nodejs() {
-  # Add NodeSource repository for Node.js 20
-  local NODE_MAJOR=20
+  # Add NodeSource repository for Node.js 22
+  local NODE_MAJOR=22
   local KEYRING_FILE="/etc/apt/keyrings/nodesource.gpg"
 
   mkdir -p /etc/apt/keyrings
